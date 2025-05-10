@@ -28,3 +28,26 @@ FROM [gold.fact_sales]
 WHERE order_date IS NOT NULL
 GROUP BY order_date
 ORDER BY order_date;
+
+## 2. 📉 Cumulative Metrics
+
+Calculated monthly and yearly running totals using window functions to visualize business growth.
+
+Added moving averages for price trends.
+
+### 📊 SQL Query Example:
+
+```sql
+SELECT 
+    order_date,
+    total_sales,
+    SUM(total_sales) OVER (ORDER BY order_date) AS Running_Total_Sales
+FROM (
+    SELECT
+        DATETRUNC(MONTH, order_date) AS order_date,
+        SUM(sales_amount) AS total_sales
+    FROM [gold.fact_sales]
+    WHERE order_date IS NOT NULL
+    GROUP BY DATETRUNC(MONTH, order_date)
+) t;
+
