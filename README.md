@@ -6,8 +6,7 @@ This SQL project explores a structured approach to understanding sales performan
 ---
 
 ## 🛠 Tools Used
-- **SQL Server** (T-SQL)
-- **Azure Data Lake** (assumed storage layer from `gold` schema)
+- **SQL Server** SSMS
 - **Data Source Tables:** `fact_sales`, `dim_products`, `dim_customers`
 
 ---
