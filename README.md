@@ -29,7 +29,7 @@ WHERE order_date IS NOT NULL
 GROUP BY order_date
 ORDER BY order_date;
 
-## 2. 📉 Cumulative Metrics
+### 2. 📉 Cumulative Metrics
 
 Calculated monthly and yearly running totals using window functions to visualize business growth.
 
