@@ -63,6 +63,22 @@ FROM (
     WHERE order_date IS NOT NULL
     GROUP BY DATETRUNC(MONTH, order_date)
 ) t;
+
+-- Yearly Cumulative with Moving Average Price
+SELECT 
+    order_date,
+    total_sales,
+    SUM(total_sales) OVER (ORDER BY order_date) AS Running_Total_Sales,
+    AVG(avg_price) OVER (ORDER BY order_date) AS Moving_Average_Price
+FROM (
+    SELECT
+        DATETRUNC(YEAR, order_date) AS order_date,
+        SUM(sales_amount) AS total_sales,
+        AVG(price) AS avg_price
+    FROM [gold.fact_sales]
+    WHERE order_date IS NOT NULL
+    GROUP BY DATETRUNC(YEAR, order_date)
+) t;
 ```
 
 ---
