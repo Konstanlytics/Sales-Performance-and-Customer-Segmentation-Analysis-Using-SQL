@@ -1,4 +1,4 @@
-# 🧾 Sales Analysis and Customer Segmentation Analysis
+# 🧾 Sales Performance and Customer Segmentation Analysis
 
 This SQL project showcases a comprehensive sales analysis using clean and capitalized SQL scripts. The project includes key metrics and insights like trends, cumulative growth, benchmarking, contribution analysis, segmentation, and customer profiling — all explained in simple, everyday terms.
 
